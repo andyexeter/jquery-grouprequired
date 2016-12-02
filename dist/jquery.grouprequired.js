@@ -20,8 +20,7 @@
 				// if it's defined (how jquery works)
 				if ( typeof window !== 'undefined' ) {
 					jQuery = require( 'jquery' );
-				}
-				else {
+				} else {
 					jQuery = require( 'jquery' )( root );
 				}
 			}

@@ -22,6 +22,21 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		jscs: {
+			options: {
+				config: '.jscsrc'
+			},
+			src: {
+				src: 'src/**/*.js'
+			},
+			dist: {
+				src: 'dist/jquery.grouprequired.js'
+			},
+			grunt: {
+				src: 'Gruntfile.js'
+			}
+		},
+
 		includes: {
 			dist: {
 				options: {
@@ -59,6 +74,7 @@ module.exports = function( grunt ) {
 	} );
 
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-jscs' );
 	grunt.loadNpmTasks( 'grunt-includes' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
