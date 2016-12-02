@@ -71,3 +71,21 @@ function bump() {
 bump package.json "\"version\": \"$currentversion\"" "\"version\": \"$toversion\""
 
 grunt
+
+read -r -p "Publish v$toversion? [Y/n]: " confirm
+
+case "$confirm" in
+	[Nn][Oo]|[Nn])
+		echo "Exiting"
+		exit
+		;;
+esac
+
+git add --all
+git commit -m "Bumped version to $toversion"
+git tag v"$toversion"
+
+git push origin master
+git push --tags
+
+npm publish
