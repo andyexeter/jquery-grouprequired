@@ -1,7 +1,7 @@
 # jQuery groupRequired
 
-[![Build status](https://img.shields.io/travis/andyexeter/jquery-grouprequired.svg?maxAge=2592000)](https://travis-ci.org/andyexeter/jquery-grouprequired)
-[![npm version](https://img.shields.io/npm/v/jquery-grouprequired.svg?maxAge=2592000)](https://www.npmjs.com/package/jquery-grouprequired)
+[![Build status](https://img.shields.io/travis/andyexeter/jquery-grouprequired.svg)](https://travis-ci.org/andyexeter/jquery-grouprequired)
+[![npm version](https://img.shields.io/npm/v/jquery-grouprequired.svg)](https://www.npmjs.com/package/jquery-grouprequired)
 ![Bower version](https://img.shields.io/bower/v/jquery-grouprequired.svg)
 [![devDependency Status](https://img.shields.io/david/dev/andyexeter/jquery-grouprequired.svg)](https://david-dm.org/andyexeter/jquery-grouprequired#info=devDependencies)
 
