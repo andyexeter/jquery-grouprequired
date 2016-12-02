@@ -7,6 +7,10 @@
 
 A jQuery plugin to use the HTML5 `required` attribute and require one of many elements.
 
+Say you have form with two inputs: telephone number and mobile number. You want the user to enter at least one
+of those numbers, but you don't want to make both fields required. This plugin will set both fields as `required` but
+will still allow the form to be submitted as long as one of them is filled.
+
 ## Installation
 
 #### Download
