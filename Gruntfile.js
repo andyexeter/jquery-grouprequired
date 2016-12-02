@@ -81,6 +81,11 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( 'default', [
 		'jshint',
+		'jscs',
+		'dist'
+	] );
+
+	grunt.registerTask( 'dist', [
 		'includes:dist',
 		'uglify:dist'
 	] );
