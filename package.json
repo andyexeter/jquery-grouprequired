@@ -19,5 +19,17 @@
     "dist",
     "src",
     "Gruntfile.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andyexeter/jquery-grouprequired"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "required",
+    "html5",
+    "form"
   ]
 }

@@ -36,6 +36,8 @@ $ bower install jquery-grouprequired --save
 
 #### Standard Usage
 ```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@latest/dist/jquery.grouprequired.min.js"></script>
 <form>
   Telephone:
   <input type="tel" name="telephone" value="" required />

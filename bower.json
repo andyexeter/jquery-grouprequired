@@ -12,6 +12,20 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "composer.json"
+    "node_modules"
+  ],
+  "keywords": [
+    "javascript",
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "required",
+    "html5",
+    "form"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
   ]
 }
