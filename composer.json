@@ -1,0 +1,14 @@
+{
+    "name": "palmtree/jquery-grouprequired",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andy Palmer",
+            "email": "andy@andypalmer.me"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

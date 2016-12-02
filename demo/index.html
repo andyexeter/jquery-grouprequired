@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery groupRequired Demo</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="main">
+	<h1>jQuery groupRequired Demo Page</h1>
+	<p>The <code>required</code> attribute is set to true on both Telephone and Mobile inputs below, but the form will still submit as long as at least one is not empty.
+	</p>
+	<form>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="name" value="" placeholder="Enter your name..."></td>
+			</tr>
+			<tr>
+				<td>Telephone:</td>
+				<td><input type="tel" name="telephone" value="" placeholder="Enter your phone number..." required></td>
+			</tr>
+			<tr>
+				<td>Mobile:</td>
+				<td><input type="tel" name="mobile" value="" placeholder="Enter your mobile number..." required></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit">Submit</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../dist/jquery.groupRequired.min.js"></script>
+<h2>Code</h2>
+<script class="code-sample">
+	// When the DOM is ready
+	$( function() {
+		$( 'input[type=tel]' ).groupRequired();
+	} );
+</script>
+</body>
+</html>

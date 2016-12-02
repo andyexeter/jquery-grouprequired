@@ -1,0 +1,24 @@
+body {
+	margin: 0;
+	padding: 0 20px;
+	font-family: sans-serif;
+}
+
+form table td {
+	padding: 5px 0;
+}
+
+form button {
+	float: right;
+}
+
+form input {
+	width: 180px;
+	padding: 5px;
+}
+
+script.code-sample {
+	display: block;
+	white-space: pre;
+	font-family: monospace
+}

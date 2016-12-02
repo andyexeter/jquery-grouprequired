@@ -1,0 +1,17 @@
+{
+  "name": "jquery-grouprequired",
+  "description": "",
+  "main": "dist/jquery.grouprequired.js",
+  "authors": [
+    "Andy Palmer <andy@andypalmer.me>"
+  ],
+  "dependencies": {
+    "jquery": "^1.9.1"
+  },
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "composer.json"
+  ]
+}
