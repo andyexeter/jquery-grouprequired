@@ -10,14 +10,14 @@ A jQuery plugin to use the HTML5 `required` attribute and require one of many el
 ## Installation
 
 #### Download
-* [jquery-grouprequired.min.js](https://unpkg.com/jquery-grouprequired@latest/dist/jquery-grouprequired.min.js)
-* [jquery-grouprequired.js](https://unpkg.com/jquery-grouprequired@latest/dist/jquery-grouprequired.js)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@latest/dist/jquery.grouprequired.min.js)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@latest/dist/jquery.grouprequired.js)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/jquery-grouprequired@latest/dist/jquery-grouprequired.min.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@latest/dist/jquery.grouprequired.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/jquery-grouprequired@latest/dist/jquery-grouprequired.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@latest/dist/jquery.grouprequired.js"></script>
 ```
 
 #### Package Managers
