@@ -50,12 +50,12 @@ $ bower install jquery-grouprequired --save
   <br />
   <input type="submit" value="Submit" />
 </form>
-```
-
-```js
+<script>
+// When the DOM is loaded
 $( function() {
 	$( 'input[type=tel]' ).groupRequired();
 } );
+</script>
 ```
 
 #### Browserify
