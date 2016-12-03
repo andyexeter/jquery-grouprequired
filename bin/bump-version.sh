@@ -14,13 +14,13 @@ if [ "$1" == "" ]; then
 fi
 
 if [ "$1" == "major" ] || [ "$1" == "minor" ] || [ "$1" == "patch" ]; then
-	currentversion=$(grep -Po '(?<="version": ")[^"]*' package.json)
+	current_version=$(grep -Po '(?<="version": ")[^"]*' package.json)
 
-	IFS='.' read -a versionparts <<< "$currentversion"
+	IFS='.' read -a version_parts <<< "$current_version"
 
-	major=${versionparts[0]}
-	minor=${versionparts[1]}
-	patch=${versionparts[2]}
+	major=${version_parts[0]}
+	minor=${version_parts[1]}
+	patch=${version_parts[2]}
 
 	case "$1" in
 		"major")
@@ -33,22 +33,22 @@ if [ "$1" == "major" ] || [ "$1" == "minor" ] || [ "$1" == "patch" ]; then
 			patch=$((patch + 1))
 			;;
 	esac
-	toversion="$major.$minor.$patch"
+	new_version="$major.$minor.$patch"
 else
 	if [ "$2" == "" ]; then
 		echo "No 'to' version set. Exiting"
 		exit 1
 	fi
-	currentversion="$1"
-	toversion="$2"
+	current_version="$1"
+	new_version="$2"
 fi
 
-if ! [[ "$toversion" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+if ! [[ "$new_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	echo "'to' version doesn't look like a valid semver version tag (e.g: 1.2.3). Exiting"
 	exit 1
 fi
 
-read -r -p "Bump version number from $currentversion to $toversion? [Y/n]: " confirm
+read -r -p "Bump version number from $current_version to $new_version? [Y/n]: " confirm
 
 case "$confirm" in
 	[Nn][Oo]|[Nn])
@@ -68,11 +68,11 @@ function bump() {
 	rm -f bumpchangelog.tmp
 }
 
-bump package.json "\"version\": \"$currentversion\"" "\"version\": \"$toversion\""
+bump package.json "\"version\": \"$current_version\"" "\"version\": \"$new_version\""
 
 grunt
 
-read -r -p "Publish v$toversion? [Y/n]: " confirm
+read -r -p "Publish v$new_version? [Y/n]: " confirm
 
 case "$confirm" in
 	[Nn][Oo]|[Nn])
@@ -82,8 +82,8 @@ case "$confirm" in
 esac
 
 git add --all
-git commit -m "Bumped version to $toversion"
-git tag v"$toversion"
+git commit -m "Bumped version to $new_version"
+git tag v"$new_version"
 
 git push origin master
 git push --tags
