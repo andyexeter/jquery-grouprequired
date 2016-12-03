@@ -8,6 +8,32 @@
 # Usage 2: ./bin/bump-version.sh <version-from> <version-to>
 # 	e.g: ./bin/bump-version.sh 1.1.1 2.0
 
+set -e
+
+function confirm() {
+	read -r -p "$@ [Y/n]: " confirm
+
+	case "$confirm" in
+		[Nn][Oo]|[Nn])
+			echo "Aborting."
+			exit
+			;;
+	esac
+}
+
+function bump() {
+	echo -n "Updating $1..."
+	tmp_file=$(mktemp)
+	rm -f "$tmp_file"
+	sed -i "s/$2/$3/1w $tmp_file" $1
+	if [ -s "$tmp_file" ]; then
+		echo "Done"
+	else
+		echo "Nothing to change"
+	fi
+	rm -f "$tmp_file"
+}
+
 if [ "$1" == "" ]; then
 	echo >&2 "No 'from' version set. Aborting."
 	exit 1
@@ -48,46 +74,25 @@ if ! [[ "$new_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	exit 1
 fi
 
-read -r -p "Bump version number from $current_version to $new_version? [Y/n]: " confirm
 
-case "$confirm" in
-	[Nn][Oo]|[Nn])
-		echo "Exiting"
-		exit
-		;;
-esac
-
-function bump() {
-	echo -n "Updating $1..."
-	tmp_file=$(mktemp)
-	rm -f "$tmp_file"
-	sed -i "s/$2/$3/1w $tmp_file" $1
-	if [ -s "$tmp_file" ]; then
-		echo "Done"
-	else
-		echo "Nothing to change"
-	fi
-	rm -f "$tmp_file"
-}
+confirm "Bump version number from $current_version to $new_version?"
 
 bump package.json "\"version\": \"$current_version\"" "\"version\": \"$new_version\""
 
 grunt
 
-read -r -p "Publish v$new_version? [Y/n]: " confirm
+confirm "Publish v$new_version?"
 
-case "$confirm" in
-	[Nn][Oo]|[Nn])
-		echo "Exiting"
-		exit
-		;;
-esac
-
+echo "Committing changed files..."
 git add --all
 git commit -m "Bumped version to $new_version"
+
+echo "Adding new version tag: v$new_version..."
 git tag v"$new_version"
 
-git push origin master
+echo "Pushing all branches and tags upstream..."
+git push --all
 git push --tags
 
+echo "Publishing to npm registry..."
 npm publish
