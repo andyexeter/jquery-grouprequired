@@ -1,6 +1,6 @@
 {
   "name": "jquery-grouprequired",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "jQuery plugin to make one of multiple elements required.",
   "main": "dist/jquery.grouprequired.js",
   "author": "Andy Palmer <andy@andypalmer.me>",
