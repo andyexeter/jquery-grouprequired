@@ -1,7 +1,8 @@
 {
   "name": "jquery-grouprequired",
+  "title": "jQuery groupRequired",
   "version": "1.0.0",
-  "description": "jQuery plugin to make one of multiple elements required.",
+  "description": "A jQuery plugin to use the HTML5 required and require one of many elements",
   "main": "dist/jquery.grouprequired.js",
   "author": "Andy Palmer <andy@andypalmer.me>",
   "license": "MIT",
