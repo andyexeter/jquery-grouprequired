@@ -1,0 +1,11 @@
+default:
+  - 'jshint'
+  - 'jscs'
+  - 'dist'
+
+dist:
+  - 'includes:dist'
+  - 'uglify:dist'
+
+test:
+  - 'qunit'

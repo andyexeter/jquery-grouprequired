@@ -15,7 +15,8 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-includes": "^1.0.0",
-    "grunt-jscs": "^3.0.1"
+    "grunt-jscs": "^3.0.1",
+    "load-grunt-config": "^0.19.2"
   },
   "files": [
     "dist",
