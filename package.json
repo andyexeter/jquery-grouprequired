@@ -1,7 +1,7 @@
 {
   "name": "jquery-grouprequired",
   "title": "jQuery groupRequired",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "A jQuery plugin to use the HTML5 required and require one of many elements",
   "main": "dist/jquery.grouprequired.js",
   "author": "Andy Palmer <andy@andypalmer.me>",
