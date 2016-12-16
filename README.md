@@ -1,6 +1,6 @@
 [//]: # (Do not edit README.md as it is automatically generated from src/README.tpl.md)
 
-# jQuery groupRequired v2.0.4
+# jQuery groupRequired v2.0.5
 
 [![Build status](https://img.shields.io/travis/andyexeter/jquery-grouprequired.svg)](https://travis-ci.org/andyexeter/jquery-grouprequired)
 [![npm version](https://img.shields.io/npm/v/jquery-grouprequired.svg)](https://www.npmjs.com/package/jquery-grouprequired)
@@ -16,14 +16,14 @@ will still allow the form to be submitted as long as one of them is filled.
 ## Installation
 
 #### Download
-* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.4/dist/jquery.grouprequired.min.js) (968B, 487B gzipped)
-* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.4/dist/jquery.grouprequired.js)  (1.73kB, 725B gzipped)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.5/dist/jquery.grouprequired.min.js) (968B, 488B gzipped)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.5/dist/jquery.grouprequired.js)  (1.73kB, 725B gzipped)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/jquery-grouprequired@2.0.4/dist/jquery.grouprequired.min.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@2.0.5/dist/jquery.grouprequired.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/jquery-grouprequired@2.0.4/dist/jquery.grouprequired.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@2.0.5/dist/jquery.grouprequired.js"></script>
 ```
 
 #### Package Managers
@@ -42,7 +42,7 @@ $ bower install jquery-grouprequired --save
 #### Standard Usage
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://unpkg.com/jquery-grouprequired@2.0.4/dist/jquery.grouprequired.min.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@2.0.5/dist/jquery.grouprequired.min.js"></script>
 <form>
   Telephone: <input type="tel" name="telephone" value="" required><br>
   Mobile: <input type="tel" name="mobile" value="" required><br>

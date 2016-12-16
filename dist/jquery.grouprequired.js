@@ -1,5 +1,5 @@
 /**
- * jquery-grouprequired v2.0.4
+ * jquery-grouprequired v2.0.5
  *
  * @author Andy Palmer <andy@andypalmer.me>
  * @license MIT
