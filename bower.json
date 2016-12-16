@@ -1,12 +1,12 @@
 {
   "name": "jquery-grouprequired",
-  "description": "",
+  "description": "A jQuery plugin to use the HTML5 required and require one of many elements",
   "main": "dist/jquery.grouprequired.js",
   "authors": [
     "Andy Palmer <andy@andypalmer.me>"
   ],
   "dependencies": {
-    "jquery": "^1.9.1"
+    "jquery": "*"
   },
   "license": "MIT",
   "homepage": "",
