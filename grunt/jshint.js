@@ -2,6 +2,9 @@ module.exports = {
 	options: {
 		jshintrc: '.jshintrc'
 	},
+	src: {
+		src: 'src/**/*.js'
+	},
 	dist: {
 		src: '<%= files.main %>'
 	},

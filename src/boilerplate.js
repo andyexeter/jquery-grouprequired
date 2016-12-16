@@ -12,5 +12,7 @@
 		factory( jQuery );
 	}
 }( function( $ ) {
+	/* jshint unused: vars */
+
 	// include "plugin.js"
 } ) );

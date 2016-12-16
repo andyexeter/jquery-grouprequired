@@ -1,11 +1,13 @@
 default:
-  - 'jshint'
-  - 'jscs'
+  - 'jshint:src'
+  - 'jscs:src'
   - 'dist'
 
 dist:
   - 'includes:dist'
   - 'uglify:dist'
+  - 'jshint:dist'
+  - 'jscs:dist'
 
 test:
   - 'qunit'

@@ -5,14 +5,23 @@ body {
 }
 
 form table td {
-	padding: 5px 0;
+	padding: 5px;
+}
+
+form label {
+	font-weight: normal;
+	cursor: pointer;
+}
+
+form label input {
+	cursor: pointer;
 }
 
 form button {
 	float: right;
 }
 
-form input {
+form input[type=text], form input[type=tel] {
 	width: 180px;
 	padding: 5px;
 }
