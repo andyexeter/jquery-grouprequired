@@ -1,7 +1,8 @@
 {
   "name": "jquery-grouprequired",
+  "title": "jQuery groupRequired",
   "version": "1.0.0",
-  "description": "jQuery plugin to make one of multiple elements required.",
+  "description": "A jQuery plugin to use the HTML5 required and require one of many elements",
   "main": "dist/jquery.grouprequired.js",
   "author": "Andy Palmer <andy@andypalmer.me>",
   "license": "MIT",
@@ -14,7 +15,8 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-includes": "^1.0.0",
-    "grunt-jscs": "^3.0.1"
+    "grunt-jscs": "^3.0.1",
+    "load-grunt-config": "^0.19.2"
   },
   "files": [
     "dist",
