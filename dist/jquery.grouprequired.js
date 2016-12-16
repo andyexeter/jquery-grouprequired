@@ -44,7 +44,7 @@
 
 				$inputs.not( this ).prop( 'required', required );
 			} )
-			.on( 'invalid', function( event ) {
+			.on( 'invalid.' + options.namespace, function( event ) {
 				var errorMessage = '';
 
 				if ( typeof options.errorMessage === 'string' ) {

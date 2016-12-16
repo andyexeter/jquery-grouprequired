@@ -2,6 +2,7 @@ default:
   - 'jshint:src'
   - 'jscs:src'
   - 'dist'
+  - 'readme'
 
 dist:
   - 'includes:dist'
