@@ -51,7 +51,9 @@ $ bower install <%= bwr.name %> --save
 <script>
 // When the DOM is loaded
 $( function() {
-	$( 'input[type=tel]' ).groupRequired();
+	$( 'input[type=tel]' ).groupRequired( {
+		errorMessage: 'Please enter at least one contact number'
+	} );
 } );
 </script>
 ```
@@ -71,6 +73,20 @@ $( 'input[type=tel]' ).groupRequired();
 ## Options
 
 `namespace` - The unique plugin namespace for events etc. Defaults to `groupRequired`.
+
+`errorMessage` - String or function which returns a string for custom error message.
+
+`requiredFilter` - Function which returns a boolean dictating whether the group of elements should be required.
+
+Using the `errorMessage` option as a function:
+```js
+$( 'input[type=tel]' ).groupRequired( {
+	errorMessage: function( message, $fields, options, event ) {
+		// do some logic checking with function arguments
+		return message;
+	}
+} );
+```
 
 Modify the `$.fn.groupRequired` object to change default option values:
 
