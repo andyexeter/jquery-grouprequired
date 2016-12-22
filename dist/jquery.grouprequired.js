@@ -1,4 +1,4 @@
-/**
+/**!
  * jquery-grouprequired v2.0.5
  *
  * @author Andy Palmer <andy@andypalmer.me>
@@ -22,10 +22,12 @@
 
 	'use strict';
 
-	$.fn.groupRequired = function( options ) {
+	var pluginName = 'groupRequired';
+
+	$.fn[ pluginName ] = function( options ) {
 		var $inputs = this;
 
-		options = $.extend( {}, $.fn.groupRequired.defaults, options );
+		options = $.extend( {}, $.fn[ pluginName ].defaults, options );
 
 		$inputs.prop( 'required', true );
 
@@ -57,7 +59,7 @@
 			} );
 	};
 
-	$.fn.groupRequired.defaults = {
+	$.fn[ pluginName ].defaults = {
 		namespace: 'groupRequired',
 		requiredFilter: false,
 		errorMessage: false

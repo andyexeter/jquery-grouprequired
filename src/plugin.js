@@ -1,9 +1,11 @@
 'use strict';
 
-$.fn.groupRequired = function( options ) {
+var pluginName = 'groupRequired';
+
+$.fn[ pluginName ] = function( options ) {
 	var $inputs = this;
 
-	options = $.extend( {}, $.fn.groupRequired.defaults, options );
+	options = $.extend( {}, $.fn[ pluginName ].defaults, options );
 
 	$inputs.prop( 'required', true );
 
@@ -35,7 +37,7 @@ $.fn.groupRequired = function( options ) {
 		} );
 };
 
-$.fn.groupRequired.defaults = {
+$.fn[ pluginName ].defaults = {
 	namespace: 'groupRequired',
 	requiredFilter: false,
 	errorMessage: false
