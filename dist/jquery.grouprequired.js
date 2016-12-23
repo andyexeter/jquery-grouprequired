@@ -57,6 +57,8 @@
 
 				this.setCustomValidity( errorMessage );
 			} );
+
+		return this;
 	};
 
 	$.fn[ pluginName ].defaults = {

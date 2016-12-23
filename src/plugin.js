@@ -35,6 +35,8 @@ $.fn[ pluginName ] = function( options ) {
 
 			this.setCustomValidity( errorMessage );
 		} );
+
+	return this;
 };
 
 $.fn[ pluginName ].defaults = {
