@@ -1,17 +1,16 @@
 /* global QUnit:false, $:false */
-QUnit.test( 'form with telephone inputs should submit if at least one of two fields are not empty', function( assert ) {
+QUnit.test( 'form with checkboxes should submit if one checkbox is checked.', function( assert ) {
 	'use strict';
 
 	var done = assert.async();
 
 	$( function() {
-		var $form   = $( '#first' ),
-			$inputs = $form.find( 'input[type=tel]' );
+		var $form   = $( '#checkboxes' ),
+			$inputs = $form.find( 'input[type=checkbox]' );
 
-		$inputs.val( '' )
-			   .eq( 0 ).val( '123456' )
-			   .end()
-			   .groupRequired();
+		$inputs.prop( 'checked', false ).last().prop( 'checked', true );
+
+		$inputs.groupRequired();
 
 		$inputs.eq( -1 ).one( 'invalid', function() {
 			assert.ok( false, 'Form was not submitted.' );
@@ -27,5 +26,6 @@ QUnit.test( 'form with telephone inputs should submit if at least one of two fie
 
 		$form.find( '[type=submit]' ).click();
 	} );
+
 
 } );
