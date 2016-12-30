@@ -29,10 +29,9 @@
 			return this.options;
 		},
 		destroy: function() {
-			this.$el.off( 'input.' + this.options.namespace + ' change.' + this.options.namespace );
-			this.$el.off( 'invalid.' + this.options.namespace );
-
-			this.$el.removeData( 'pluginName + '.plugin );
+			this.$el
+				.off( '.' + this.options.namespace )
+				.removeData( pluginName + '.plugin' );
 
 			return true;
 		}
