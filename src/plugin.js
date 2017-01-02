@@ -3,13 +3,35 @@
 var pluginName = 'groupRequired';
 
 var publicAPI = {
+	/**
+	 * Returns the plugin instance's options object.
+	 *
+	 * @returns {object}
+	 */
 	getOptions: function() {
 		return this.options;
 	},
+	/**
+	 * Destroys the plugin instance.
+	 *
+	 * @returns {boolean}
+	 */
 	destroy: function() {
+		// Reset each element's 'required' attribute.
+		this.$el.each( function() {
+			var origRequired = $( this ).data( 'origRequired.' + pluginName );
+
+			if ( typeof origRequired === 'undefined' ) {
+				$( this ).removeAttr( 'required' );
+			} else {
+				$( this ).attr( 'required', origRequired );
+			}
+		} );
+
+		// Remove all events and data added by the plugin.
 		this.$el
 			.off( '.' + this.options.namespace )
-			.removeData( pluginName + '.plugin' );
+			.removeData( [ pluginName + '.plugin', 'origRequired.' + pluginName ] );
 
 		return true;
 	}
@@ -21,7 +43,6 @@ var privateAPI = {
 		var $inputs = this.$el;
 
 		$inputs
-			.prop( 'required', true )
 			.each( function() {
 				privateAPI.setRequired.call( _this, $( this ) );
 			} )
@@ -43,9 +64,18 @@ var privateAPI = {
 	setRequired: function( $element, event ) {
 		var required = ( $element.is( ':checkbox,:radio' ) ) ? !$element.is( ':checked' ) : !$element.val().length;
 
-		this.$el.each( function() {
-			this.setCustomValidity( '' );
-		} );
+		// If there's no event argument the function has been called on DOM ready.
+		if ( typeof event === 'undefined' ) {
+			this.$el.each( function() {
+				// Store this element's original 'required' attribute, for when the destroy method is called.
+				$( this ).data( 'origRequired.' + pluginName, $( this ).attr( 'required' ) );
+			} );
+		} else {
+			this.$el.each( function() {
+				// Clear custom validity message to stop browsers firing an 'invalid' event for this element.
+				this.setCustomValidity( '' );
+			} );
+		}
 
 		if ( $.isFunction( this.options.requiredFilter ) ) {
 			required = this.options.requiredFilter.call( $element, required, this, event );
