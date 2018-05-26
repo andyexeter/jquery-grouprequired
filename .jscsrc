@@ -16,19 +16,17 @@
   "disallowSpaceBeforePostfixUnaryOperators": true,
   "maximumLineLength": null,
   "requireSpacesInsideBrackets": null,
-  "requireSpacesInsideParentheses": {
-    "all": true,
-    "except": [
-      "{",
-      "}",
-      "[",
-      "]",
-      "function"
-    ]
+  "disallowSpacesInsideParentheses": true,
+  "requireSpacesInsideParentheses": null,
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "disallowSpacesInFunctionExpression": null,
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true,
+    "beforeOpeningRoundBrace": true
   },
   "validateQuoteMarks": "'",
-  "requireCapitalizedComments": false,
+  "requireCapitalizedComments": null,
   "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
   "requireBlocksOnNewline": true,
-  "requirePaddingNewLinesBeforeLineComments": false
+  "requirePaddingNewLinesBeforeLineComments": null
 }

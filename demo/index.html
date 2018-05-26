@@ -1,147 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>jQuery groupRequired Demo</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>jQuery groupRequired Demo</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div id="main">
-	<div class="container">
-		<h1>jQuery groupRequired Demo Page</h1>
-		<p>The
-			<code>required</code> attribute is set to true on both Telephone and Mobile inputs below, but the form will still submit as long as at least one is not empty.
-		</p>
+    <div class="container">
+        <h1>jQuery groupRequired Demo Page</h1>
+        <p>The
+            <code>required</code> attribute is set to true on both Telephone and Mobile inputs below, but the form will still submit as long as at least one is not empty.
+        </p>
 
-		<h2>Textual Input</h2>
-		<form>
-			<table>
-				<tr>
-					<td>Name:</td>
-					<td><input type="text" class="form-control" name="name" value="" placeholder="Enter your name..."></td>
-				</tr>
-				<tr>
-					<td>Telephone:</td>
-					<td><input type="tel" class="form-control" name="telephone" value="" placeholder="Enter your phone number..." required></td>
-				</tr>
-				<tr>
-					<td>Mobile:</td>
-					<td><input type="tel" class="form-control" name="mobile" value="" placeholder="Enter your mobile number..." required></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</td>
-				</tr>
-			</table>
-		</form>
+        <h2>Textual Input</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" class="form-control" name="name" value="" placeholder="Enter your name..."></td>
+                </tr>
+                <tr>
+                    <td>Telephone:</td>
+                    <td><input type="tel" class="form-control" name="telephone" value="" placeholder="Enter your phone number..." required></td>
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td><input type="tel" class="form-control" name="mobile" value="" placeholder="Enter your mobile number..." required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
 
-		<h2>Checkboxes</h2>
-		<form>
-			<table>
-				<tr>
-					<td><label><input type="checkbox" name="name" value="" placeholder="Enter your name..." title="Test?"> Checkbox 1</label></td>
-				</tr>
-				<tr>
-					<td><label><input type="checkbox" name="name1" value="" placeholder="Enter your name..."> Checkbox 2</label></td>
-				</tr>
-				<tr>
-					<td>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</td>
-				</tr>
-			</table>
-		</form>
+        <h2>Checkboxes</h2>
+        <form>
+            <table>
+                <tr>
+                    <td><label><input type="checkbox" name="name" value="" placeholder="Enter your name..." title="Test?"> Checkbox 1</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="checkbox" name="name1" value="" placeholder="Enter your name..."> Checkbox 2</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
 
-		<h2>Radio Buttons</h2>
-		<form>
-			<table>
-				<tr>
-					<td><label><input type="radio" name="name" value="yep" placeholder="Enter your name..." required>Radio Group 1</label></td>
-					<td><label><input type="radio" name="name" value="" placeholder="Enter your name..." required>Radio Group 1</label></td>
-				</tr>
-				<tr>
-					<td><label><input type="radio" name="name1" value="yep" placeholder="Enter your name...">Radio Group 2</label></td>
-					<td><label><input type="radio" name="name1" value="nope" placeholder="Enter your name...">Radio Group 2</label></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</td>
-				</tr>
-			</table>
-		</form>
+        <h2>Radio Buttons</h2>
+        <form>
+            <table>
+                <tr>
+                    <td><label><input type="radio" name="name" value="yep" placeholder="Enter your name..." required>Radio Group 1</label></td>
+                    <td><label><input type="radio" name="name" value="" placeholder="Enter your name..." required>Radio Group 1</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="radio" name="name1" value="yep" placeholder="Enter your name...">Radio Group 2</label></td>
+                    <td><label><input type="radio" name="name1" value="nope" placeholder="Enter your name...">Radio Group 2</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
 
-		<form>
-			<table>
-				<tr>
-					<td><label><input type="radio" name="name" value="yep" placeholder="Enter your name..." required>Name</label></td>
-					<td><label><input type="radio" name="name" value="" placeholder="Enter your name..." required>Name 1</label></td>
-				</tr>
-				<tr>
-					<td><label><input type="radio" name="name1" value="yep" placeholder="Enter your name...">Name</label></td>
-					<td><label><input type="radio" name="name1" value="nope" placeholder="Enter your name...">Name 1</label></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</td>
-				</tr>
-			</table>
-		</form>
+        <form>
+            <table>
+                <tr>
+                    <td><label><input type="radio" name="name" value="yep" placeholder="Enter your name..." required>Name</label></td>
+                    <td><label><input type="radio" name="name" value="" placeholder="Enter your name..." required>Name 1</label></td>
+                </tr>
+                <tr>
+                    <td><label><input type="radio" name="name1" value="yep" placeholder="Enter your name...">Name</label></td>
+                    <td><label><input type="radio" name="name1" value="nope" placeholder="Enter your name...">Name 1</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
 
-		<h2>Select Boxes</h2>
-		<form>
-			<table>
-				<tr>
-					<td>
-						<select class="form-control" name="sel1">
-							<option value="">-- Select --</option>
-							<option value="1">My Option</option>
-							<option value="2">My Option 2</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<select class="form-control" name="sel2">
-							<option value="">-- Select --</option>
-							<option value="1">My Option</option>
-							<option value="2">My Option 2</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</td>
-				</tr>
-			</table>
-		</form>
-	</div>
+        <h2>Select Boxes</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <select class="form-control" name="sel1">
+                            <option value="">-- Select --</option>
+                            <option value="1">My Option</option>
+                            <option value="2">My Option 2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="form-control" name="sel2">
+                            <option value="">-- Select --</option>
+                            <option value="1">My Option</option>
+                            <option value="2">My Option 2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="../dist/jquery.grouprequired.js"></script>
 <div class="container">
-	<h2>Code</h2>
-	<script class="code-sample">
-		// When the DOM is ready
-		$( function() {
-			$( 'input[type=tel]' ).groupRequired( {
-				errorMessage: 'Please enter one of your telephone or mobile number'
-			} );
+    <h2>Code</h2>
+    <script class="code-sample">
+        // When the DOM is ready
+        $(function () {
+            $('input[type=tel]').groupRequired({
+                errorMessage: 'Please enter one of your telephone or mobile number'
+            });
 
-			$( 'input[type=checkbox]' ).groupRequired( {
-				errorMessage: 'Please tick at least one of the boxes'
-			} );
+            $('input[type=checkbox]').groupRequired({
+                errorMessage: 'Please tick at least one of the boxes'
+            });
 
-			$( 'input[type=radio]' ).groupRequired();
+            $('input[type=radio]').groupRequired();
 
-			$( 'select' ).groupRequired();
-		} );
-	</script>
+            $('select').groupRequired();
+        });
+    </script>
 </div>
 </body>
 </html>
