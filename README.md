@@ -15,8 +15,8 @@ will still allow the form to be submitted as long as one of them is filled.
 ## Installation
 
 #### Download
-* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js) (1.8kB, 773B gzipped)
-* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.js)  (4.58kB, 1.36kB gzipped)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js) (1.68kB, 685B gzipped)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.js)  (4.56kB, 1.35kB gzipped)
 
 #### CDN
 ```html
@@ -64,7 +64,7 @@ $ npm install jquery-grouprequired --save
 
 ```js
 var $ = require('jquery');
-require('jquery-grouprequired');
+require('jquery-grouprequired')($);
 
 $('input[type=tel]').groupRequired();
 ```

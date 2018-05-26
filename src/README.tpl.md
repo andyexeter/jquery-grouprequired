@@ -64,7 +64,7 @@ $ npm install <%= pkg.name %> --save
 
 ```js
 var $ = require('jquery');
-require('<%= pkg.name %>');
+require('<%= pkg.name %>')($);
 
 $('input[type=tel]').groupRequired();
 ```
