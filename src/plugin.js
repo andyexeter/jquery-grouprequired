@@ -29,11 +29,9 @@ var publicAPI = {
         });
 
         // Remove all events and data added by the plugin.
-        this.$el
+        return this.$el
             .off('.' + this.options.namespace)
             .removeData([pluginName + '.plugin', 'origRequired.' + pluginName]);
-
-        return true;
     }
 };
 
