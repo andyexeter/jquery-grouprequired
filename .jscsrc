@@ -1,5 +1,4 @@
 {
-  "preset": "jquery",
   "requireDotNotation": {
     "allExcept": [
       "snake_case",
