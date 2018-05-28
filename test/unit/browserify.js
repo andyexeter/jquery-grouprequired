@@ -26,6 +26,7 @@
     var pluginName = 'groupRequired';
 
     var publicAPI = {
+
         /**
          * Returns the plugin instance's options object.
          *
@@ -34,33 +35,36 @@
         getOptions: function () {
             return this.options;
         },
+
         /**
          * Destroys the plugin instance.
          *
-         * @returns {boolean}
+         * @returns {jQuery}
          */
         destroy: function () {
             // Reset each element's 'required' attribute.
             this.$el.each(function () {
                 var origRequired = $(this).data('origRequired.' + pluginName);
 
-                if (typeof origRequired === 'undefined') {
-                    $(this).removeAttr('required');
-                } else {
+                if (origRequired) {
                     $(this).attr('required', origRequired);
+                } else {
+                    $(this).removeAttr('required');
                 }
             });
 
             // Remove all events and data added by the plugin.
-            this.$el
+            return this.$el
                 .off('.' + this.options.namespace)
                 .removeData([pluginName + '.plugin', 'origRequired.' + pluginName]);
-
-            return true;
         }
     };
 
     var privateAPI = {
+
+        /**
+         * Initialises the plugin instance
+         */
         init: function () {
             var _this = this;
             var $inputs = this.$el;
@@ -73,32 +77,36 @@
                     privateAPI.setRequired.call(_this, $(this), event);
                 })
                 .on('invalid.' + this.options.namespace, function (event) {
-                    var errorMessage = '';
+                    var errorMessage = _this.options.errorMessage;
 
-                    if (typeof _this.options.errorMessage === 'string') {
-                        errorMessage = _this.options.errorMessage;
-                    } else if ($.isFunction(_this.options.errorMessage)) {
-                        errorMessage = _this.options.errorMessage.call(this, errorMessage, $inputs, _this.options, event);
+                    if ($.isFunction(errorMessage)) {
+                        errorMessage = errorMessage.call(this, $inputs, _this.options, event);
                     }
 
                     this.setCustomValidity(errorMessage);
                 });
         },
+
+        /**
+         * Sets the required property of all other elements in the group based on the value of the given
+         * element and the custom required filter function.
+         *
+         * Used as a handler for the 'input' event AND to initialise the plugin.
+         *
+         * @param {jQuery} $element
+         * @param {jQuery.Event} event
+         */
         setRequired: function ($element, event) {
             var required = ($element.is(':checkbox,:radio')) ? !$element.is(':checked') : !$element.val().length;
 
-            // If there's no event argument the function has been called on DOM ready.
-            if (typeof event === 'undefined') {
-                this.$el.each(function () {
-                    // Store this element's original 'required' attribute, for when the destroy method is called.
-                    $(this).data('origRequired.' + pluginName, $(this).attr('required'));
-                });
-            } else {
-                this.$el.each(function () {
-                    // Clear custom validity message to stop browsers firing an 'invalid' event for this element.
+            this.$el.each(function () {
+                // Store this element's original 'required' attribute, for when the destroy method is called.
+                if (event) {
                     this.setCustomValidity('');
-                });
-            }
+                } else {
+                    $(this).data('origRequired.' + pluginName, $(this).attr('required'));
+                }
+            });
 
             if ($.isFunction(this.options.requiredFilter)) {
                 required = this.options.requiredFilter.call($element, required, this, event);
@@ -125,10 +133,8 @@
             this.data(pluginName + '.plugin', plugin);
         }
 
-        if (typeof options === 'string') {
-            if ($.isFunction(publicAPI[options])) {
-                return plugin[options].apply(plugin, Array.prototype.slice.call(arguments, 1));
-            }
+        if ($.isFunction(publicAPI[options])) {
+            return plugin[options].apply(plugin, Array.prototype.slice.call(arguments, 1));
         }
 
         return this;
