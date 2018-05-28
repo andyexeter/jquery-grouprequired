@@ -29,15 +29,15 @@
                 var $form   = $(options.form),
                     $inputs = $form.find(options.inputs);
 
-                $inputs.val('');
+                $inputs.off('invalid').val('');
 
                 // Call the 'setup' method for this test.
-                options.setup($inputs, $form);
+                var pluginOptions = options.setup($inputs, $form) || {};
 
-                $inputs.groupRequired();
+                $inputs.groupRequired('destroy').groupRequired(pluginOptions);
 
                 $inputs.eq(-1).one('invalid', function () {
-                    options.onInvalid(assert);
+                    options.onInvalid(assert, this);
 
                     done();
                 });
@@ -65,6 +65,7 @@
     addUnitTest.defaults = {
         inputs: ':input:not([type=button]):not([type=submit]):not([type=reset])',
         setup: function () {
+            return {};
         },
         afterSetup: function () {
         },
