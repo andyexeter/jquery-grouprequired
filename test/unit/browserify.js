@@ -10,9 +10,7 @@
     /* jshint strict: false */
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['jquery'], function ($) {
-            return factory($);
-        });
+        define(['jquery'], factory);
     } else if (typeof module === 'object' && module.exports) {
         // Node/CommonJS
         module.exports = factory;
@@ -10512,7 +10510,7 @@ return jQuery;
 
 },{}],3:[function(require,module,exports){
 /* global QUnit:false */
-QUnit.test('browserify', function (assert) {
+QUnit.test('browserify require should attach plugin to required version of jQuery', function (assert) {
 	'use strict';
 
 	var $ = require('jquery');

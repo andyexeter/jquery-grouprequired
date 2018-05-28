@@ -1,5 +1,5 @@
 /* global QUnit:false */
-QUnit.test('browserify', function (assert) {
+QUnit.test('browserify require should attach plugin to required version of jQuery', function (assert) {
 	'use strict';
 
 	var $ = require('jquery');
