@@ -3,9 +3,6 @@ module.exports = function () {
 
     var path = require('path');
 
-    console.log(path.resolve(__dirname, '../test/unit'));
-    console.log(path.resolve('./src/test/unit/webpack.js'));
-
     return {
         blah: {
             entry: './src/test/unit/webpack.js',
