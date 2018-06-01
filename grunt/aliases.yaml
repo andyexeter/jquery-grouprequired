@@ -12,4 +12,5 @@ dist:
 
 test:
   - 'browserify'
+  - 'webpack'
   - 'qunit'
