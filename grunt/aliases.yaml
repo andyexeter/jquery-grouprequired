@@ -11,4 +11,6 @@ dist:
   - 'jscs:dist'
 
 test:
+  - 'browserify'
+  - 'webpack'
   - 'qunit'

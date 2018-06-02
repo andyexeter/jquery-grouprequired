@@ -1,33 +1,33 @@
 body {
-	margin: 0;
-	padding: 0 20px;
-	font-family: sans-serif;
+    margin: 0;
+    padding: 0 20px;
+    font-family: sans-serif;
 }
 
 form table td {
-	padding: 5px;
+    padding: 5px;
 }
 
 form label {
-	font-weight: normal;
-	cursor: pointer;
+    font-weight: normal;
+    cursor: pointer;
 }
 
 form label input {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 form button {
-	float: right;
+    float: right;
 }
 
 form input[type=text], form input[type=tel] {
-	width: 180px;
-	padding: 5px;
+    width: 180px;
+    padding: 5px;
 }
 
 script.code-sample {
-	display: block;
-	white-space: pre;
-	font-family: monospace
+    display: block;
+    white-space: pre;
+    font-family: monospace
 }

@@ -10,15 +10,10 @@
 
 set -e
 
-function confirm() {
-	read -r -p "$@ [Y/n]: " confirm
-
-	case "$confirm" in
-		[Nn][Oo]|[Nn])
-			echo "Aborting."
-			exit
-			;;
-	esac
+# Define which files to update and the pattern to look for
+function bump_files() {
+	bump package.json "\"version\": \"$current_version\"" "\"version\": \"$new_version\""
+	#bump README.md "my-plugin v$current_version" "my-plugin v$new_version"
 }
 
 function bump() {
@@ -32,6 +27,17 @@ function bump() {
 		echo "Nothing to change"
 	fi
 	rm -f "$tmp_file"
+}
+
+function confirm() {
+	read -r -p "$@ [Y/n]: " confirm
+
+	case "$confirm" in
+		[Nn][Oo]|[Nn])
+			echo "Aborting."
+			exit
+			;;
+	esac
 }
 
 if [ "$1" == "" ]; then
@@ -74,10 +80,9 @@ if ! [[ "$new_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	exit 1
 fi
 
-
 confirm "Bump version number from $current_version to $new_version?"
 
-bump package.json "\"version\": \"$current_version\"" "\"version\": \"$new_version\""
+bump_files
 
 grunt
 
