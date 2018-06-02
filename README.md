@@ -15,8 +15,8 @@ will still allow the form to be submitted as long as one of them is filled.
 ## Installation
 
 #### Download
-* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js) (1.53kB, 649B gzipped)
-* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.js)  (4.46kB, 1.36kB gzipped)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js) (1.53kB, 650B gzipped)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.js)  (4.45kB, 1.36kB gzipped)
 
 #### CDN
 ```html
@@ -71,11 +71,11 @@ $('input[type=tel]').groupRequired();
 
 ## Options
 
-`namespace` - The unique plugin namespace for events etc. Defaults to `groupRequired`.
-
-`errorMessage` - String or function which returns a string for custom error message.
-
-`requiredFilter` - Function which returns a boolean dictating whether the group of elements should be required.
+| Option         | Type                   | Description                                                                                  | Default           |
+|----------------|------------------------|----------------------------------------------------------------------------------------------|-------------------|
+| errorMessage   | `string` or `function` | Custom error message                                                                         | `''`              |
+| requiredFilter | `function`             | Function which returns a boolean dictating whether the group of elements should be required. | `null`            |
+| namespace      | `string`               | Unique plugin namespace for events and data                                                  | `'groupRequired'` |
 
 Using the `errorMessage` option as a function:
 ```js

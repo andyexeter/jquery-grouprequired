@@ -71,11 +71,11 @@ $('input[type=tel]').groupRequired();
 
 ## Options
 
-`namespace` - The unique plugin namespace for events etc. Defaults to `groupRequired`.
-
-`errorMessage` - String or function which returns a string for custom error message.
-
-`requiredFilter` - Function which returns a boolean dictating whether the group of elements should be required.
+| Option         | Type                   | Description                                                                                  | Default           |
+|----------------|------------------------|----------------------------------------------------------------------------------------------|-------------------|
+| errorMessage   | `string` or `function` | Custom error message                                                                         | `''`              |
+| requiredFilter | `function`             | Function which returns a boolean dictating whether the group of elements should be required. | `null`            |
+| namespace      | `string`               | Unique plugin namespace for events and data                                                  | `'groupRequired'` |
 
 Using the `errorMessage` option as a function:
 ```js

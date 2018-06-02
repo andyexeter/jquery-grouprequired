@@ -119,6 +119,6 @@ $.fn[pluginName] = function (options) {
 
 $.fn[pluginName].defaults = {
     namespace: 'groupRequired',
-    requiredFilter: false,
-    errorMessage: false
+    requiredFilter: null,
+    errorMessage: ''
 };
