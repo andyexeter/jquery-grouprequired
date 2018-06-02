@@ -1,5 +1,5 @@
 /* global QUnit:false */
-QUnit.test('webpack', function (assert) {
+QUnit.test('webpack require should attach plugin to required version of jQuery', function (assert) {
     'use strict';
 
     var $ = require('jquery');
