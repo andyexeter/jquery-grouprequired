@@ -1,6 +1,6 @@
 [//]: # (Do not edit README.md as it is automatically generated from src/README.tpl.md)
 
-# jQuery groupRequired v2.0.6
+# jQuery groupRequired v2.2.0
 
 [![Build status](https://img.shields.io/travis/andyexeter/jquery-grouprequired.svg)](https://travis-ci.org/andyexeter/jquery-grouprequired)
 [![npm version](https://img.shields.io/npm/v/jquery-grouprequired.svg)](https://www.npmjs.com/package/jquery-grouprequired)
@@ -15,14 +15,14 @@ will still allow the form to be submitted as long as one of them is filled.
 ## Installation
 
 #### Download
-* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js) (1.53kB, 650B gzipped)
-* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.js)  (4.45kB, 1.36kB gzipped)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js) (1.53kB, 650B gzipped)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.js)  (4.45kB, 1.36kB gzipped)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.js"></script>
 ```
 
 #### Package Managers
@@ -47,7 +47,7 @@ $ npm install jquery-grouprequired --save
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://unpkg.com/jquery-grouprequired@2.0.6/dist/jquery.grouprequired.min.js"></script>
+<script src="https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js"></script>
 <script>
 $(function () {
     $('input[type=tel]').groupRequired({
