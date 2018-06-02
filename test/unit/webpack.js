@@ -115,7 +115,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* global QUnit:false */\nQUnit.test('webpack', function (assert) {\n    'use strict';\n\n    var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n    __webpack_require__(/*! ../../../dist/jquery.grouprequired */ \"./dist/jquery.grouprequired.js\")($);\n\n    assert.ok($.isFunction($.fn.groupRequired));\n});\n\n\n//# sourceURL=webpack:///./src/test/unit/webpack.js?");
+eval("/* global QUnit:false */\nQUnit.test('webpack require should attach plugin to required version of jQuery', function (assert) {\n    'use strict';\n\n    var $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n    __webpack_require__(/*! ../../../dist/jquery.grouprequired */ \"./dist/jquery.grouprequired.js\")($);\n\n    assert.ok($.isFunction($.fn.groupRequired));\n});\n\n\n//# sourceURL=webpack:///./src/test/unit/webpack.js?");
 
 /***/ })
 

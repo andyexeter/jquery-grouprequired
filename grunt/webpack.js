@@ -4,11 +4,11 @@ module.exports = function () {
     var path = require('path');
 
     return {
-        blah: {
+        test: {
             entry: './src/test/unit/webpack.js',
             mode: 'development',
             output: {
-                path: path.resolve(__dirname, '../test/unit'),
+                path: path.resolve('./test/unit'),
                 filename: 'webpack.js'
             }
         }
