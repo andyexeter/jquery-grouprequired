@@ -71,11 +71,11 @@ $('input[type=tel]').groupRequired();
 
 ## Options
 
-| Option         | Type                   | Description                                                                                  | Default           |
-|----------------|------------------------|----------------------------------------------------------------------------------------------|-------------------|
-| errorMessage   | `string` or `function` | Custom error message                                                                         | `''`              |
-| requiredFilter | `function`             | Function which returns a boolean dictating whether the group of elements should be required. | `null`            |
-| namespace      | `string`               | Unique plugin namespace for events and data                                                  | `'groupRequired'` |
+| Option         | Type               | Description                                                                                  | Default           |
+|----------------|--------------------|----------------------------------------------------------------------------------------------|-------------------|
+| errorMessage   | `string\|function` | Custom error message                                                                         | `''`              |
+| requiredFilter | `function`         | Function which returns a boolean dictating whether the group of elements should be required. | `null`            |
+| namespace      | `string`           | Unique plugin namespace for events and data                                                  | `'groupRequired'` |
 
 Using the `errorMessage` option as a function:
 ```js
