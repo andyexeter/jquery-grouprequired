@@ -15,8 +15,8 @@ will still allow the form to be submitted as long as one of them is filled.
 ## Installation
 
 #### Download
-* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js) (1.48kB, 645B gzipped)
-* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.js)  (4.25kB, 1.37kB gzipped)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js) (1.46kB, 630B gzipped)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.js)  (4.19kB, 1.34kB gzipped)
 
 #### CDN
 ```html

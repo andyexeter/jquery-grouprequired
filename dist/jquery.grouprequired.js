@@ -42,7 +42,7 @@
          */
         destroy: function () {
             // Reset each element's 'required' attribute.
-            this.$el.each(function () {
+            this.$els.each(function () {
                 var origRequired = $(this).data('origRequired.' + pluginName);
 
                 if (origRequired) {
@@ -53,7 +53,7 @@
             });
 
             // Remove all events and data added by the plugin.
-            return this.$el
+            return this.$els
                 .off('.' + this.options.namespace)
                 .removeData([pluginName + '.plugin', 'origRequired.' + pluginName]);
         }
@@ -61,18 +61,17 @@
 
     /**
      *
-     * @param {Element} element
-     * @param {Object}  options
+     * @param {jQuery} $elements
+     * @param {Object} options
      * @constructor
      */
-    function Plugin(element, options) {
-        this.$el = $(element);
+    function Plugin($elements, options) {
+        this.$els = $elements;
         this.options = $.extend({}, $.fn[pluginName].defaults, (typeof options === 'object') ? options : {});
 
         var _this = this;
-        var $inputs = this.$el;
 
-        $inputs
+        this.$els
             .each(function () {
                 setRequired.call(_this, $(this));
             })
@@ -83,7 +82,7 @@
                 var errorMessage = _this.options.errorMessage;
 
                 if ($.isFunction(errorMessage)) {
-                    errorMessage = errorMessage.call(this, $inputs, _this.options, event);
+                    errorMessage = errorMessage.call(this, _this.$els, _this.options, event);
                 }
 
                 this.setCustomValidity(errorMessage);
@@ -103,7 +102,7 @@
         /* jshint validthis: true */
         var required = ($element.is(':checkbox,:radio')) ? !$element.is(':checked') : !$element.val().length;
 
-        this.$el.each(function () {
+        this.$els.each(function () {
             // Store this element's original 'required' attribute, for when the destroy method is called.
             if (event) {
                 this.setCustomValidity('');
@@ -116,14 +115,13 @@
             required = this.options.requiredFilter.call($element, required, this, event);
         }
 
-        this.$el.not($element).prop('required', required);
+        this.$els.not($element).prop('required', required);
     }
 
     $.fn[pluginName] = function (options) {
         var plugin = this.data(pluginName + '.plugin');
 
         if (!plugin) {
-            console.log(this.each);
             plugin = new Plugin(this, options);
             this.data(pluginName + '.plugin', plugin);
         }
