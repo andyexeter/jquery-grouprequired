@@ -8,4 +8,4 @@
         }
     });
 
-})($.fn.groupRequired.addUnitTest);
+})(window.addUnitTest);

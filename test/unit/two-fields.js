@@ -17,4 +17,4 @@
             assert.ok(true, 'Form was not submitted.');
         }
     });
-})($.fn.groupRequired.addUnitTest);
+})(window.addUnitTest);
