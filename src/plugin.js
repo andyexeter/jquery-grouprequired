@@ -60,7 +60,7 @@ function Plugin($elements, options) {
             var errorMessage = _this.options.errorMessage;
 
             if ($.isFunction(errorMessage)) {
-                errorMessage = errorMessage.call(this, _this.$els, _this.options, event);
+                errorMessage = errorMessage.call(this, _this, event);
             }
 
             this.setCustomValidity(errorMessage);

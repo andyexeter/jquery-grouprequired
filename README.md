@@ -15,8 +15,8 @@ will still allow the form to be submitted as long as one of them is filled.
 ## Installation
 
 #### Download
-* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js) (1.46kB, 630B gzipped)
-* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.js)  (4.19kB, 1.34kB gzipped)
+* [jquery.grouprequired.min.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.min.js) (1.44kB, 624B gzipped)
+* [jquery.grouprequired.js](https://unpkg.com/jquery-grouprequired@2.2.0/dist/jquery.grouprequired.js)  (4.17kB, 1.33kB gzipped)
 
 #### CDN
 ```html
@@ -80,9 +80,10 @@ $('input[type=tel]').groupRequired();
 Using the `errorMessage` option as a function:
 ```js
 $('input[type=tel]').groupRequired({
-    errorMessage: function (message, $fields, options, event) {
+    errorMessage: function (pluginInstance, event) {
         // do some logic checking with function arguments
-        return message;
+        // 'this' is bound to the current input element
+        return 'Please enter a number';
     }
 });
 ```
