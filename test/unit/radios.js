@@ -7,5 +7,5 @@
             $inputs.prop('checked', false).last().prop('checked', true);
         }
     });
-})($.fn.groupRequired.addUnitTest);
+})(window.addUnitTest);
 

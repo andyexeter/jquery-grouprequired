@@ -9,4 +9,4 @@
             $select.val($select.find('option').last().val());
         }
     });
-})($.fn.groupRequired.addUnitTest);
+})(window.addUnitTest);

@@ -26,4 +26,4 @@
             assert.equal(input.validationMessage, 'Hello World Function');
         }
     });
-})($.fn.groupRequired.addUnitTest);
+})(window.addUnitTest);

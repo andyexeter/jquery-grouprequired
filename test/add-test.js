@@ -78,5 +78,5 @@
     };
 
     // Add as a property of the plugin so we don't pollute the global namespace
-    $.fn.groupRequired.addUnitTest = addUnitTest;
+    window.addUnitTest = addUnitTest;
 })();

@@ -80,9 +80,10 @@ $('input[type=tel]').groupRequired();
 Using the `errorMessage` option as a function:
 ```js
 $('input[type=tel]').groupRequired({
-    errorMessage: function (message, $fields, options, event) {
+    errorMessage: function (pluginInstance, event) {
         // do some logic checking with function arguments
-        return message;
+        // 'this' is bound to the current input element
+        return 'Please enter a number';
     }
 });
 ```
