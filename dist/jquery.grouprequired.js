@@ -67,7 +67,7 @@
      */
     function Plugin($elements, options) {
         this.$els = $elements;
-        this.options = $.extend({}, $.fn[pluginName].defaults, (typeof options === 'object') ? options : {});
+        this.options = $.extend({}, $.fn[pluginName].defaults, options);
 
         var _this = this;
 
@@ -100,13 +100,13 @@
      */
     function setRequired($element, event) {
         /* jshint validthis: true */
-        var required = ($element.is(':checkbox,:radio')) ? !$element.is(':checked') : !$element.val().length;
+        var required = $element.is(':checkbox,:radio') ? !$element.is(':checked') : !$element.val().length;
 
         this.$els.each(function () {
-            // Store this element's original 'required' attribute, for when the destroy method is called.
             if (event) {
                 this.setCustomValidity('');
             } else {
+                // Store this element's original 'required' attribute, for when the destroy method is called.
                 $(this).data('origRequired.' + pluginName, $(this).attr('required'));
             }
         });
