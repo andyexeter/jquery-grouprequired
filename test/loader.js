@@ -7,8 +7,6 @@
     console.log('Using ' + src);
     injectScript(src);
 
-    injectScript('add-test.js');
-
     // Inject tests
     [
         'defaults',
@@ -28,13 +26,14 @@
         var script = document.createElement('script');
 
         script.src = src;
+        script.async = false;
 
         document.head.appendChild(script);
     }
 
     function getUserAgentQuery() {
         var parts = navigator.userAgent.split('?'),
-            obj   = {};
+            obj = {};
 
         if (parts.length > 1) {
             var query = parts[1].split('&'),
