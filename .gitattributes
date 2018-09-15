@@ -1,1 +1,2 @@
-demo/* linguist-documentation
+demo/* linguist-detectable=false
+test/index.html linguist-detectable=false
