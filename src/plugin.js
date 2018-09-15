@@ -79,6 +79,8 @@ function Plugin($elements, options) {
 function setRequired($element, event) {
     /* jshint validthis: true */
 
+    var total = 0;
+
     this.$els.each(function () {
         if (event) {
             this.setCustomValidity('');
@@ -86,15 +88,19 @@ function setRequired($element, event) {
             // Store this element's original 'required' attribute, for when the destroy method is called.
             $(this).data('origRequired.' + pluginName, $(this).attr('required'));
         }
+
+        if(['checkbox', 'radio'].indexOf($element.prop('type')) > -1) {
+            total += $(this).prop('checked');
+        } else {
+            total += $(this).val().length;
+        }
     });
 
-    var required = $element.is(':checkbox,:radio') ? !$element.is(':checked') : !$element.val().length;
-
     if ($.isFunction(this.options.requiredFilter)) {
-        required = this.options.requiredFilter.call($element, required, this, event);
+        total = this.options.requiredFilter.call($element, !total, this, event);
     }
 
-    this.$els.not($element).prop('required', required);
+    this.$els.prop('required', !total);
 }
 
 $.fn[pluginName] = function (options) {
