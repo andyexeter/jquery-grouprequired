@@ -85,7 +85,8 @@ function setRequired($element, event) {
         if (event) {
             this.setCustomValidity('');
         } else {
-            // Store this element's original 'required' attribute, for when the destroy method is called.
+            // No event passed so this is plugin initialisation. Store this element's original
+            // 'required' attribute for when the destroy method is called.
             $(this).data('origRequired.' + pluginName, $(this).attr('required'));
         }
 
@@ -96,7 +97,7 @@ function setRequired($element, event) {
         }
     });
 
-    if ($.isFunction(this.options.requiredFilter)) {
+    if (this.options.requiredFilter) {
         total = this.options.requiredFilter.call($element, !total, this, event);
     }
 
