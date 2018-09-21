@@ -4,6 +4,10 @@ body {
     font-family: sans-serif;
 }
 
+h2 {
+    margin-top: 1rem;
+}
+
 form table td {
     padding: 5px;
 }

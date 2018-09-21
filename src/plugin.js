@@ -1,6 +1,6 @@
 'use strict';
 
-var pluginName = 'groupRequired';
+var PLUGIN_NAME = 'groupRequired';
 
 Plugin.prototype = {
 
@@ -21,7 +21,7 @@ Plugin.prototype = {
     destroy: function () {
         // Reset each element's 'required' attribute.
         this.$els.each(function () {
-            var origRequired = $(this).data('origRequired.' + pluginName);
+            var origRequired = $(this).data('origRequired.' + PLUGIN_NAME);
 
             if (origRequired) {
                 $(this).attr('required', origRequired);
@@ -33,7 +33,7 @@ Plugin.prototype = {
         // Remove all events and data added by the plugin.
         return this.$els
             .off('.' + this.options.namespace)
-            .removeData([pluginName + '.plugin', 'origRequired.' + pluginName]);
+            .removeData([PLUGIN_NAME + '.plugin', 'origRequired.' + PLUGIN_NAME]);
     }
 };
 
@@ -45,12 +45,13 @@ Plugin.prototype = {
  */
 function Plugin($elements, options) {
     this.$els = $elements;
-    this.options = $.extend({}, $.fn[pluginName].defaults, options);
+    this.options = $.extend({}, $.fn[PLUGIN_NAME].defaults, options);
 
     var _this = this;
 
     this.$els
         .each(function () {
+            $(this).data('origRequired.' + PLUGIN_NAME, $(this).attr('required'));
             setRequired.call(_this, $(this));
         })
         .on('input.' + this.options.namespace + ' change.' + this.options.namespace, function (event) {
@@ -79,30 +80,26 @@ function Plugin($elements, options) {
 function setRequired($element, event) {
     /* jshint validthis: true */
 
+    var required = true;
+
     this.$els.each(function () {
-        if (event) {
-            this.setCustomValidity('');
-        } else {
-            // Store this element's original 'required' attribute, for when the destroy method is called.
-            $(this).data('origRequired.' + pluginName, $(this).attr('required'));
-        }
+        this.setCustomValidity('');
+        required = required && !this.checkValidity();
     });
 
-    var required = $element.is(':checkbox,:radio') ? !$element.is(':checked') : !$element.val().length;
-
-    if ($.isFunction(this.options.requiredFilter)) {
+    if (this.options.requiredFilter) {
         required = this.options.requiredFilter.call($element, required, this, event);
     }
 
-    this.$els.not($element).prop('required', required);
+    this.$els.prop('required', required);
 }
 
-$.fn[pluginName] = function (options) {
-    var plugin = this.data(pluginName + '.plugin');
+$.fn[PLUGIN_NAME] = function (options) {
+    var plugin = this.data(PLUGIN_NAME + '.plugin');
 
     if (!plugin) {
         plugin = new Plugin(this, options);
-        this.data(pluginName + '.plugin', plugin);
+        this.data(PLUGIN_NAME + '.plugin', plugin);
     }
 
     if ($.isFunction(Plugin.prototype[options])) {
@@ -112,7 +109,7 @@ $.fn[pluginName] = function (options) {
     return this;
 };
 
-$.fn[pluginName].defaults = {
+$.fn[PLUGIN_NAME].defaults = {
     namespace: 'groupRequired',
     requiredFilter: null,
     errorMessage: ''
