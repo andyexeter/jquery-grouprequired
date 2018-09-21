@@ -24,8 +24,6 @@
 
     var PLUGIN_NAME = 'groupRequired';
 
-    var CHECKABLE_TYPES = ['checkbox', 'radio'];
-
     Plugin.prototype = {
 
         /**
@@ -75,7 +73,7 @@
 
         this.$els
             .each(function () {
-                console.log('loop 1');
+                $(this).data('origRequired.' + PLUGIN_NAME, $(this).attr('required'));
                 setRequired.call(_this, $(this));
             })
             .on('input.' + this.options.namespace + ' change.' + this.options.namespace, function (event) {
@@ -107,20 +105,8 @@
         var required = true;
 
         this.$els.each(function () {
-            console.log('loop 2');
-            if (event) {
-                this.setCustomValidity('');
-            } else {
-                // No event passed so this is plugin initialisation. Store this element's original
-                // 'required' attribute for when the destroy method is called.
-                $(this).data('origRequired.' + PLUGIN_NAME, $(this).attr('required'));
-            }
-
-            if (CHECKABLE_TYPES.indexOf($element.prop('type')) > -1) {
-                required = required && !$(this).prop('checked');
-            } else {
-                required = required && !$(this).val().length;
-            }
+            this.setCustomValidity('');
+            required = required && !this.checkValidity();
         });
 
         if (this.options.requiredFilter) {
