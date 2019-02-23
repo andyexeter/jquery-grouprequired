@@ -14,6 +14,6 @@ Pull requests are very welcome. Please use the standard 'fork and pull' github m
 4. Open a pull request
 
 All pull requests must pass travis CI builds so please ensure your code follows
-the standards within `.jshintrc`, `.jscsrc` and passes QUnit tests (You can use `grunt test` to test your code)
+the standards within `.jshintrc` and passes QUnit tests (You can use `grunt test` to test your code)
 
 Any new features should also include an accompanying unit test located within `test\unit\my-feature.js`

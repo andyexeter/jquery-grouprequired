@@ -1,6 +1,5 @@
 default:
   - 'jshint:src'
-  - 'jscs:src'
   - 'dist'
   - 'readme'
 
@@ -8,7 +7,6 @@ dist:
   - 'includes:dist'
   - 'uglify:dist'
   - 'jshint:dist'
-  - 'jscs:dist'
 
 test:
   - 'browserify'
