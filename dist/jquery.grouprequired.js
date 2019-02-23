@@ -4,34 +4,32 @@
  * @author Andy Palmer <andy@andypalmer.me>
  * @license MIT
  */
-(function (factory) {
+(function(factory) {
     // Universal Module Definition
     /* jshint strict: false */
-    if (typeof module === 'object' && module.exports) {
+    if (typeof module === "object" && module.exports) {
         // Node/CommonJS (Browserify/Webpack)
         module.exports = factory;
-    } else if (typeof define === 'function' && define.amd) {
+    } else if (typeof define === "function" && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
+        define(["jquery"], factory);
     } else {
         // Browser globals
         factory(jQuery);
     }
-}(function ($) {
+})(function($) {
     /* jshint unused: vars */
+    "use strict";
 
-    'use strict';
-
-    var PLUGIN_NAME = 'groupRequired';
+    var PLUGIN_NAME = "groupRequired";
 
     Plugin.prototype = {
-
         /**
          * Returns the plugin instance's options object.
          *
          * @returns {object}
          */
-        getOptions: function () {
+        getOptions: function() {
             return this.options;
         },
 
@@ -40,22 +38,25 @@
          *
          * @returns {jQuery}
          */
-        destroy: function () {
+        destroy: function() {
             // Reset each element's 'required' attribute.
-            this.$els.each(function () {
-                var origRequired = $(this).data('origRequired.' + PLUGIN_NAME);
+            this.$els.each(function() {
+                var origRequired = $(this).data("origRequired." + PLUGIN_NAME);
 
                 if (origRequired) {
-                    $(this).attr('required', origRequired);
+                    $(this).attr("required", origRequired);
                 } else {
-                    $(this).removeAttr('required');
+                    $(this).removeAttr("required");
                 }
             });
 
             // Remove all events and data added by the plugin.
             return this.$els
-                .off('.' + this.options.namespace)
-                .removeData([PLUGIN_NAME + '.plugin', 'origRequired.' + PLUGIN_NAME]);
+                .off("." + this.options.namespace)
+                .removeData([
+                    PLUGIN_NAME + ".plugin",
+                    "origRequired." + PLUGIN_NAME
+                ]);
         }
     };
 
@@ -72,14 +73,23 @@
         var _this = this;
 
         this.$els
-            .each(function () {
-                $(this).data('origRequired.' + PLUGIN_NAME, $(this).attr('required'));
+            .each(function() {
+                $(this).data(
+                    "origRequired." + PLUGIN_NAME,
+                    $(this).attr("required")
+                );
                 setRequired.call(_this, $(this));
             })
-            .on('input.' + this.options.namespace + ' change.' + this.options.namespace, function (event) {
-                setRequired.call(_this, $(this), event);
-            })
-            .on('invalid.' + this.options.namespace, function (event) {
+            .on(
+                "input." +
+                    this.options.namespace +
+                    " change." +
+                    this.options.namespace,
+                function(event) {
+                    setRequired.call(_this, $(this), event);
+                }
+            )
+            .on("invalid." + this.options.namespace, function(event) {
                 var errorMessage = _this.options.errorMessage;
 
                 if ($.isFunction(errorMessage)) {
@@ -104,37 +114,44 @@
 
         var required = true;
 
-        this.$els.each(function () {
-            this.setCustomValidity('');
+        this.$els.each(function() {
+            this.setCustomValidity("");
             required = required && !this.checkValidity();
         });
 
         if (this.options.requiredFilter) {
-            required = this.options.requiredFilter.call($element, required, this, event);
+            required = this.options.requiredFilter.call(
+                $element,
+                required,
+                this,
+                event
+            );
         }
 
-        this.$els.prop('required', required);
+        this.$els.prop("required", required);
     }
 
-    $.fn[PLUGIN_NAME] = function (options) {
-        var plugin = this.data(PLUGIN_NAME + '.plugin');
+    $.fn[PLUGIN_NAME] = function(options) {
+        var plugin = this.data(PLUGIN_NAME + ".plugin");
 
         if (!plugin) {
             plugin = new Plugin(this, options);
-            this.data(PLUGIN_NAME + '.plugin', plugin);
+            this.data(PLUGIN_NAME + ".plugin", plugin);
         }
 
         if ($.isFunction(Plugin.prototype[options])) {
-            return plugin[options].apply(plugin, Array.prototype.slice.call(arguments, 1));
+            return plugin[options].apply(
+                plugin,
+                Array.prototype.slice.call(arguments, 1)
+            );
         }
 
         return this;
     };
 
     $.fn[PLUGIN_NAME].defaults = {
-        namespace: 'groupRequired',
+        namespace: "groupRequired",
         requiredFilter: null,
-        errorMessage: ''
+        errorMessage: ""
     };
-
-}));
+});
